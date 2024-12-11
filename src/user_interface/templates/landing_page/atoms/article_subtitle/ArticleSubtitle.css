@@ -1,0 +1,7 @@
+.article-subtitle {
+  margin-top: 3vh;
+  line-height: 3vw;
+  font-weight: 600;
+  font-size: 1.75vw;
+  z-index: 3;
+}

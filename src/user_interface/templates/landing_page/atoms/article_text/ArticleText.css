@@ -1,0 +1,7 @@
+.article-text {
+  margin-top: 3vh;
+  line-height: 2vw;
+  font-weight: 400;
+  font-size: 1.25vw;
+  z-index: 3;
+}

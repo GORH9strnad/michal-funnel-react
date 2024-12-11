@@ -1,0 +1,15 @@
+:right-bar {
+  --right-bar-position: 20;
+}
+
+.right-bar {
+  position: sticky;
+  object-fit: cover;
+  height: 100vh;
+  width: calc(var(--right-bar-position) * 1%);
+  right: 0;
+  top: 0;
+  transition: width 1s ease;
+  overflow: hidden;
+  z-index: 2;
+}

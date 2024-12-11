@@ -1,0 +1,6 @@
+.article-title {
+  line-height: 10vh;
+  font-weight: 1000;
+  font-size: 3vw;
+  z-index: 3;
+}

@@ -1,0 +1,11 @@
+.landing-page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  background: linear-gradient(
+    to right,
+    rgba(143, 182, 182, 0.56),
+    rgb(255, 255, 255)
+  );
+}

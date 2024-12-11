@@ -1,0 +1,6 @@
+.avatar-photo {
+  width: 60%;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.33);
+  border-radius: 50%;
+  margin-top: 6vh;
+}
