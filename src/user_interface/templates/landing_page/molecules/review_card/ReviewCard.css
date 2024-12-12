@@ -1,0 +1,30 @@
+.review-card {
+  display: flex;
+  width: 100%;
+  margin-top: 5vh;
+}
+
+.review-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.review-card-text h3 {
+  position: fixed;
+  margin-left: 5vw;
+  top: 0;
+  font-weight: 600;
+}
+
+.review-card-text div {
+  margin-top: 1vh;
+  font-size: 2vh;
+}

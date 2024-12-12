@@ -13,6 +13,10 @@ import TextHighliting from "./user_interface/templates/landing_page/atoms/underl
 import ArticleSubtitle from "./user_interface/templates/landing_page/atoms/article_subtitle/ArticleSubtitle";
 import ArticleText from "./user_interface/templates/landing_page/atoms/article_text/ArticleText";
 import Carousel from "./user_interface/templates/landing_page/molecules/carousel/Carousel";
+import RatingStars from "./user_interface/templates/landing_page/atoms/rating_stars/RatingStars";
+import reviews from "./user_interface/assets/text/reviews";
+import ReviewCard from "./user_interface/templates/landing_page/molecules/review_card/ReviewCard";
+import RatingPhoto from "./user_interface/templates/landing_page/atoms/rating_photo/RatingPhoto";
 
 function App() {
   return (
@@ -43,7 +47,11 @@ function App() {
             během ani ne jednoho týdne, a to i přesto, že jste na lyžích nikdy
             nestáli!
           </ArticleText>
-          <Carousel />
+          <Carousel>
+            {reviews.map((review, index) => (
+              <ReviewCard key={index} review={review} />
+            ))}
+          </Carousel>
         </Article>
         <RightBar>
           <RightBarVideo />

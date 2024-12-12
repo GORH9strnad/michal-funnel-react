@@ -1,0 +1,21 @@
+.rating-stars {
+  display: inline-block;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.rating-star {
+  font-size: 32px;
+  margin-right: 2px;
+  text-align: center;
+}
+
+.rating-star.filled {
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.rating-star.empty {
+  color: gray;
+  text-shadow: none;
+}
