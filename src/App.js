@@ -17,6 +17,9 @@ import RatingStars from "./user_interface/templates/landing_page/atoms/rating_st
 import reviews from "./user_interface/assets/text/reviews";
 import ReviewCard from "./user_interface/templates/landing_page/molecules/review_card/ReviewCard";
 import RatingPhoto from "./user_interface/templates/landing_page/atoms/rating_photo/RatingPhoto";
+import DateRangePicker from "./user_interface/templates/landing_page/molecules/date_range_picker/DatePicker";
+import DatePicker from "./user_interface/templates/landing_page/molecules/date_range_picker/DatePicker";
+import ParticipantsPicker from "./user_interface/templates/landing_page/molecules/participants_picker/ParticipantsPicker";
 
 function App() {
   return (
@@ -52,6 +55,8 @@ function App() {
               <ReviewCard key={index} review={review} />
             ))}
           </Carousel>
+          <DatePicker />
+          <ParticipantsPicker />
         </Article>
         <RightBar>
           <RightBarVideo />
