@@ -1,3 +1,4 @@
 .date-picker {
   padding: 10vh 0;
+  z-index: 5;
 }

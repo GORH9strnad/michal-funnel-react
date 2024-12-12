@@ -70,6 +70,7 @@ function DatePicker() {
 
   return (
     <div className="date-picker">
+      <h1>Vyberte si turnus</h1>
       <DateRangePicker
         ranges={[selectionRange]}
         staticRanges={predefinedRanges}

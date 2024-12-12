@@ -3,9 +3,9 @@ import ReactSlider from "react-slider";
 import "./Slider.css";
 
 function Slider(props) {
-  const { useSliderState, textBefore, textAfter, topLimit } = props;
+  const { sliderState, textBefore, textAfter, topLimit } = props;
 
-  const [value, setValue] = useSliderState;
+  const [value, setValue] = sliderState;
 
   useEffect(() => {
     if (value > topLimit) {
