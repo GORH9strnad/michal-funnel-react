@@ -1,0 +1,9 @@
+.participants-picker {
+  z-index: 5;
+  margin: 10vh 0;
+}
+
+.participants-picker h1 {
+  text-align: center;
+  margin-top: 10vh;
+}

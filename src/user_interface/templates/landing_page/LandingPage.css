@@ -9,3 +9,8 @@
     rgb(255, 255, 255)
   );
 }
+
+.landing-page.mobile {
+  flex-direction: column;
+  width: 100dvw;
+}

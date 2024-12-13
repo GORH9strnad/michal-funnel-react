@@ -28,3 +28,8 @@
   margin-top: 1vh;
   font-size: 2vh;
 }
+
+.review-card-text.mobile h3 {
+  margin-left: 1vw;
+  font-size: 2.5vh;
+}

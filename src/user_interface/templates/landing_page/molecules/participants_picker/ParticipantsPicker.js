@@ -25,7 +25,7 @@ function ParticipantsPicker() {
   }, []);
 
   return (
-    <div>
+    <div className="participants-picker">
       <h1>Vaše parta</h1>
       <Slider
         sliderState={[childrenCount, setChildrenCountCallback]}

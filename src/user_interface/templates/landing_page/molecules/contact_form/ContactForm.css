@@ -1,0 +1,9 @@
+.contact-form {
+  margin-top: 10vh;
+  width: 55%;
+  z-index: 5;
+}
+
+.contact-form h1 {
+  text-align: center;
+}

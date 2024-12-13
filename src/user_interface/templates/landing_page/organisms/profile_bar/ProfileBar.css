@@ -1,4 +1,4 @@
-.left-bar {
+.profile-bar {
   left: 0;
   top: 0;
   bottom: 0;
@@ -8,4 +8,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.profile-bar-mobile {
+  width: 100dvw;
+  z-index: 5;
 }

@@ -6,14 +6,20 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
 
 import reviews from "../../../../assets/text/reviews";
+import { useAdaptiveResponsiveContext } from "../../../../../business_logic/wrappers/AdaptiveResponsive";
 
 function Carousel({ children }) {
+  const { device } = useAdaptiveResponsiveContext();
+
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: device === "desktop",
   };
 
   return (

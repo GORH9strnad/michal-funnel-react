@@ -1,0 +1,40 @@
+/* PaymentForm.css */
+.card-element {
+  font-size: 16px;
+  color: #424770;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.card-element::placeholder {
+  color: #aab7c4;
+}
+
+.card-element--invalid {
+  color: #9e2146;
+}
+
+.payment-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.payment-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.payment-form {
+  z-index: 5;
+  padding: 10vh 0;
+  width: 55%;
+}

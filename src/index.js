@@ -4,15 +4,18 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AdaptiveResponsive } from "./business_logic/wrappers/AdaptiveResponsive";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/:routeToken?/*" element={<App />} />
-      </Routes>
-    </BrowserRouter>
+    <AdaptiveResponsive>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/:routeToken?/*" element={<App />} />
+        </Routes>
+      </BrowserRouter>
+    </AdaptiveResponsive>
   </React.StrictMode>
 );
 

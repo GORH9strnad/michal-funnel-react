@@ -10,12 +10,30 @@
 .article::before {
   content: "";
   position: absolute;
-  top: 0%;
+  top: 0;
   left: 10%;
   right: 0;
   bottom: 0;
   opacity: 0.7;
   z-index: 0;
+  pointer-events: none;
+  background-image: url("../../../../assets/photos/static/mountains.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.article-mobile {
+  margin: 4vw;
+}
+
+.article-mobile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
   pointer-events: none;
   background-image: url("../../../../assets/photos/static/mountains.png");
   background-position: center;
