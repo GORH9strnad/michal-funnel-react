@@ -1,11 +1,14 @@
 import { memo } from "react";
 import "./Input.css";
+import { useAdaptiveResponsiveContext } from "../../../../../business_logic/wrappers/AdaptiveResponsive";
 
 function Input(props) {
   const { type, placeholder, name, value, onChange, message } = props;
 
+  const { device } = useAdaptiveResponsiveContext();
+
   return (
-    <div className="input">
+    <div className={`input ${device === "mobile" ? "mobile" : ""}`}>
       <label>{name}</label>
       <input
         type={type}
@@ -13,7 +16,7 @@ function Input(props) {
         value={value}
         onChange={onChange}
       />
-      {message && <span className="input-message">{message}</span>}
+      {message && <span>{message}</span>}
     </div>
   );
 }

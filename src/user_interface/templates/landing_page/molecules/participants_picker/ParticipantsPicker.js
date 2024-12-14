@@ -2,11 +2,14 @@ import { memo, useCallback, useEffect, useState } from "react";
 import "./ParticipantsPicker.css";
 import Slider from "../../atoms/slider/Slider";
 import useParticipants from "../../../../../business_logic/hooks/useParticipants";
+import { useAdaptiveResponsiveContext } from "../../../../../business_logic/wrappers/AdaptiveResponsive";
 
 const maxParticipants = 11;
 const minParticipants = 1;
 
 function ParticipantsPicker() {
+  const { device } = useAdaptiveResponsiveContext();
+
   const [
     childrenCount,
     childrenCountLimit,
@@ -25,7 +28,9 @@ function ParticipantsPicker() {
   }, []);
 
   return (
-    <div className="participants-picker">
+    <div
+      className={`participants-picker ${device === "mobile" ? "mobile" : ""}`}
+    >
       <h1>Vaše parta</h1>
       <Slider
         sliderState={[childrenCount, setChildrenCountCallback]}

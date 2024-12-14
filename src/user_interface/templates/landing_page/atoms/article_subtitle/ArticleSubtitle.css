@@ -5,3 +5,10 @@
   font-size: 1.75vw;
   z-index: 3;
 }
+
+.article-subtitle.mobile {
+  font-size: 5vw;
+  line-height: 3.5vh;
+  margin: 2vw;
+  margin-top: 5vw;
+}

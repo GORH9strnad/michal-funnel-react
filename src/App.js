@@ -12,15 +12,12 @@ import TextHighliting from "./user_interface/templates/landing_page/atoms/underl
 import ArticleSubtitle from "./user_interface/templates/landing_page/atoms/article_subtitle/ArticleSubtitle";
 import ArticleText from "./user_interface/templates/landing_page/atoms/article_text/ArticleText";
 import Carousel from "./user_interface/templates/landing_page/molecules/carousel/Carousel";
-import RatingStars from "./user_interface/templates/landing_page/atoms/rating_stars/RatingStars";
 import reviews from "./user_interface/assets/text/reviews";
 import ReviewCard from "./user_interface/templates/landing_page/molecules/review_card/ReviewCard";
-import RatingPhoto from "./user_interface/templates/landing_page/atoms/rating_photo/RatingPhoto";
-import DateRangePicker from "./user_interface/templates/landing_page/molecules/date_range_picker/DatePicker";
 import DatePicker from "./user_interface/templates/landing_page/molecules/date_range_picker/DatePicker";
 import ParticipantsPicker from "./user_interface/templates/landing_page/molecules/participants_picker/ParticipantsPicker";
 import ContactForm from "./user_interface/templates/landing_page/molecules/contact_form/ContactForm";
-import PaymentForm from "./user_interface/templates/landing_page/molecules/card_form/PaymentForm";
+import PaymentForm from "./user_interface/templates/landing_page/molecules/payment_form/PaymentForm";
 import { useAdaptiveResponsiveContext } from "./business_logic/wrappers/AdaptiveResponsive";
 import ProfileBar from "./user_interface/templates/landing_page/organisms/profile_bar/ProfileBar";
 

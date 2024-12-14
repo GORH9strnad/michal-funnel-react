@@ -49,7 +49,6 @@ function DatePicker() {
   const handleSelect = (ranges) => {
     const { startDate, endDate } = ranges.selection;
 
-    // Check if selected range matches any predefined range
     const isValidSelection = predefinedRanges.some((range) => {
       const { startDate: predefinedStart, endDate: predefinedEnd } =
         range.range();
@@ -59,7 +58,6 @@ function DatePicker() {
       );
     });
 
-    // Update state only if selection is valid
     if (isValidSelection) {
       setSelectionRange(ranges.selection);
       console.log("Valid selection:", ranges.selection);

@@ -7,6 +7,7 @@ import {
 } from "@stripe/react-stripe-js";
 import "./PaymentForm.css";
 import { loadStripe } from "@stripe/stripe-js";
+import { useAdaptiveResponsiveContext } from "../../../../../business_logic/wrappers/AdaptiveResponsive";
 
 const stripePromise = loadStripe("your-public-key-here");
 
@@ -58,8 +59,10 @@ const CardForm = () => {
 };
 
 function PaymentForm() {
+  const { device } = useAdaptiveResponsiveContext();
+
   return (
-    <div className="payment-form">
+    <div className={`payment-form ${device === "mobile" ? "mobile" : ""}`}>
       <Elements stripe={stripePromise}>
         <CardForm />
       </Elements>

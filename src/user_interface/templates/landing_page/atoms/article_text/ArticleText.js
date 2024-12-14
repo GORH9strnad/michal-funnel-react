@@ -1,8 +1,15 @@
 import { memo } from "react";
 import "./ArticleText.css";
+import { useAdaptiveResponsiveContext } from "../../../../../business_logic/wrappers/AdaptiveResponsive";
 
 function ArticleText({ children }) {
-  return <div className="article-text">{children}</div>;
+  const { device } = useAdaptiveResponsiveContext();
+
+  return (
+    <div className={`article-text ${device === "mobile" ? "mobile" : ""}`}>
+      {children}
+    </div>
+  );
 }
 
 export default memo(ArticleText);

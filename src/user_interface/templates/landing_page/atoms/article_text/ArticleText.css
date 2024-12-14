@@ -5,3 +5,10 @@
   font-size: 1.25vw;
   z-index: 3;
 }
+
+.article-text.mobile {
+  font-size: 5vw;
+  line-height: 5vh;
+  margin: 2vw;
+  margin-top: 5vw;
+}
