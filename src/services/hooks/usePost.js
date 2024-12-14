@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function usePOST(route, body) {
+function usePost(route, body) {
   const [response, setResponse] = useState(null);
   const [isPerforming, setIsPerforming] = useState(true);
   const [status, setStatus] = useState(null);
@@ -37,4 +37,4 @@ function usePOST(route, body) {
   return [response, isPerforming, status, error];
 }
 
-export { usePOST };
+export default usePost;

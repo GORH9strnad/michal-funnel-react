@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function usePUT(route, body) {
+function usePut(route, body) {
   const [response, setResponse] = useState(null);
   const [isPerforming, setIsPerforming] = useState(true);
   const [status, setStatus] = useState(null);
@@ -37,4 +37,4 @@ function usePUT(route, body) {
   return [response, isPerforming, status, error];
 }
 
-export { usePUT };
+export default usePut;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useGET(route) {
+function useGet(route) {
   const [response, setResponse] = useState(null);
   const [isPerforming, setIsPerforming] = useState(true);
   const [status, setStatus] = useState(null);
@@ -31,4 +31,4 @@ function useGET(route) {
   return [response, isPerforming, status, error];
 }
 
-export { useGET };
+export default useGet;

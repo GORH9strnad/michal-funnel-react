@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useDELETE(route) {
+function useDelete(route) {
   const [response, setResponse] = useState(null);
   const [isPerforming, setIsPerforming] = useState(true);
   const [status, setStatus] = useState(null);
@@ -33,4 +33,4 @@ function useDELETE(route) {
   return [response, isPerforming, status, error];
 }
 
-export { useDELETE };
+export default useDelete;
