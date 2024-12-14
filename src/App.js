@@ -14,12 +14,12 @@ import ArticleText from "./user_interface/templates/landing_page/atoms/article_t
 import Carousel from "./user_interface/templates/landing_page/molecules/carousel/Carousel";
 import reviews from "./user_interface/assets/text/reviews";
 import ReviewCard from "./user_interface/templates/landing_page/molecules/review_card/ReviewCard";
-import DatePicker from "./user_interface/templates/landing_page/molecules/date_range_picker/DatePicker";
 import ParticipantsPicker from "./user_interface/templates/landing_page/molecules/participants_picker/ParticipantsPicker";
 import ContactForm from "./user_interface/templates/landing_page/molecules/contact_form/ContactForm";
 import PaymentForm from "./user_interface/templates/landing_page/molecules/payment_form/PaymentForm";
 import { useAdaptiveResponsiveContext } from "./business_logic/wrappers/AdaptiveResponsive";
 import ProfileBar from "./user_interface/templates/landing_page/organisms/profile_bar/ProfileBar";
+import DateRangePicker from "./user_interface/templates/landing_page/molecules/date_range_picker/DateRangePicker";
 
 function App() {
   const { device } = useAdaptiveResponsiveContext();
@@ -57,7 +57,7 @@ function App() {
               <ReviewCard key={index} review={review} />
             ))}
           </Carousel>
-          <DatePicker />
+          <DateRangePicker />
           <ContactForm />
           <ParticipantsPicker />
           <PaymentForm />
@@ -101,7 +101,7 @@ function App() {
             <ReviewCard key={index} review={review} />
           ))}
         </Carousel>
-        <DatePicker />
+        <DateRangePicker />
         <ContactForm />
         <ParticipantsPicker />
         <PaymentForm />
@@ -109,7 +109,7 @@ function App() {
     </LandingPage>
   );
 
-  return device === "desktop" ? desktopLayout : mobileLayout;
+  return device === "mobile" ? mobileLayout : desktopLayout;
 }
 
 export default App;
