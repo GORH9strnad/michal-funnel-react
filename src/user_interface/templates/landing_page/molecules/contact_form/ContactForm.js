@@ -2,7 +2,7 @@ import { memo } from "react";
 import "./ContactForm.css";
 import Input from "../../atoms/input/Input";
 import { useAdaptiveResponsiveContext } from "../../../../../business_logic/wrappers/AdaptiveResponsive";
-import { useName } from "../../../../../business_logic/hooks/hooks";
+import { useContact, useName } from "../../../../../business_logic/hooks/hooks";
 import useEmail from "../../../../../business_logic/hooks/useEmail";
 import usePhone from "../../../../../business_logic/hooks/usePhone";
 
@@ -12,6 +12,8 @@ function ContactForm() {
   const [name, setName, nameError] = useName();
   const [email, setEmail, emailError] = useEmail();
   const [phone, setPhone, phoneError] = usePhone();
+
+  useContact();
 
   const handlePhoneChange = (e) => {
     const value = e.target.value;

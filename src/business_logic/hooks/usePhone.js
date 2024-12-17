@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { socket } from "../../services/server/Socket";
 import { useGlobalContext } from "../../state_managment/GlobalProvider";
+import { useParams } from "react-router-dom";
 
 function usePhone() {
+  const { token } = useParams();
+
   const { state, setState } = useGlobalContext();
 
   const setPhone = (phone) => {
@@ -36,17 +39,20 @@ function usePhone() {
       }
     };
 
-    socket.on("validate-phone", handleValidation);
+    socket.on("phone", handleValidation);
 
     return () => {
-      socket.off("validate-phone", handleValidation);
+      socket.off("phone", handleValidation);
     };
   }, []);
 
   useEffect(() => {
     const debouncedValidation = setTimeout(() => {
       if (state?.phone) {
-        socket.emit("validate-phone", state?.phone);
+        socket.emit("phone", {
+          phone: state?.phone,
+          token: token ? token : null,
+        });
       }
     }, 1000);
 

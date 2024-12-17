@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { socket } from "../../services/server/Socket";
 import { useGlobalContext } from "../../state_managment/GlobalProvider";
+import { useParams } from "react-router-dom";
 
 function useName() {
+  const { token } = useParams();
+
   const { state, setState } = useGlobalContext();
 
   const setName = (name) => {
@@ -25,24 +28,24 @@ function useName() {
       }
     };
 
-    socket.on("validate-name", handleValidation);
+    socket.on("name", handleValidation);
 
     return () => {
-      socket.off("validate-name", handleValidation);
+      socket.off("name", handleValidation);
     };
   }, []);
 
   useEffect(() => {
     const debouncedValidation = setTimeout(() => {
-      if (state?.name) {
-        socket.emit("validate-name", state?.name);
+      if (state.name) {
+        socket.emit("name", { name: state?.name, token: token ? token : null });
       }
     }, 1000);
 
     return () => clearTimeout(debouncedValidation);
-  }, [state?.name]);
+  }, [state.name]);
 
-  return [state?.name, setName, error];
+  return [state.name, setName, error];
 }
 
 export default useName;

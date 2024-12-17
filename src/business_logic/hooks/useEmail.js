@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { socket } from "../../services/server/Socket";
 import { useGlobalContext } from "../../state_managment/GlobalProvider";
+import { useParams } from "react-router-dom";
 
 function useEmail() {
+  const { token } = useParams();
+
   const { state, setState } = useGlobalContext();
 
   const setEmail = (email) => {
@@ -36,17 +39,20 @@ function useEmail() {
       }
     };
 
-    socket.on("validate-email", handleValidation);
+    socket.on("email", handleValidation);
 
     return () => {
-      socket.off("validate-email", handleValidation);
+      socket.off("email", handleValidation);
     };
   }, []);
 
   useEffect(() => {
     const debouncedValidation = setTimeout(() => {
       if (state?.email) {
-        socket.emit("validate-email", state?.email);
+        socket.emit("email", {
+          email: state?.email,
+          token: token ? token : null,
+        });
       }
     }, 1000);
 
