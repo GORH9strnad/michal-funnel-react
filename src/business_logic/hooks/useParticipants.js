@@ -1,21 +1,39 @@
 import { useEffect, useState } from "react";
+import { useGlobalContext } from "../../state_managment/GlobalProvider";
 
 function useParticipants(minParticipants, maxParticipants) {
-  const [childrenCount, setChildrenCount] = useState(0);
-  const [adultsCount, setAdultsCount] = useState(0);
+  const { state, setState } = useGlobalContext();
+
+  const setChildrenCount = (childrenCount) => {
+    setState((prevState) => {
+      return {
+        ...prevState,
+        childrenCount: childrenCount,
+      };
+    });
+  };
+
+  const setAdultsCount = (adultsCount) => {
+    setState((prevState) => {
+      return {
+        ...prevState,
+        adultsCount: adultsCount,
+      };
+    });
+  };
 
   const [childrenCountLimit, setChildrenCountLimit] = useState(maxParticipants);
   const [adultsCountLimit, setAdultsCountLimit] = useState(maxParticipants);
 
   useEffect(() => {
-    setChildrenCountLimit(maxParticipants - adultsCount);
-    setAdultsCountLimit(maxParticipants - childrenCount);
-  }, [childrenCount, adultsCount]);
+    setChildrenCountLimit(maxParticipants - state?.adultsCount);
+    setAdultsCountLimit(maxParticipants - state?.childrenCount);
+  }, [state?.childrenCount, state?.adultsCount]);
 
   return [
-    childrenCount,
+    state?.childrenCount,
     childrenCountLimit,
-    adultsCount,
+    state?.adultsCount,
     adultsCountLimit,
     setChildrenCount,
     setAdultsCount,

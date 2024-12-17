@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AdaptiveResponsive } from "./business_logic/wrappers/AdaptiveResponsive";
+import { GlobalProvider } from "./state_managment/GlobalProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,7 +13,15 @@ root.render(
     <AdaptiveResponsive>
       <BrowserRouter>
         <Routes>
-          <Route path="/:routeToken?/*" element={<App />} />
+          <Route
+            path="/:token?/*"
+            element={
+              <GlobalProvider>
+                <App />
+              </GlobalProvider>
+            }
+          />
+          <Route path="/error/*" element={<h1>ERROR</h1>} />
         </Routes>
       </BrowserRouter>
     </AdaptiveResponsive>

@@ -20,9 +20,14 @@ import PaymentForm from "./user_interface/templates/landing_page/molecules/payme
 import { useAdaptiveResponsiveContext } from "./business_logic/wrappers/AdaptiveResponsive";
 import ProfileBar from "./user_interface/templates/landing_page/organisms/profile_bar/ProfileBar";
 import DateRangePicker from "./user_interface/templates/landing_page/molecules/date_range_picker/DateRangePicker";
+import { useToken } from "./business_logic/hooks/hooks";
+import { GlobalProvider } from "./state_managment/GlobalProvider";
+import { useData } from "./business_logic/hooks/hooks";
 
 function App() {
   const { device } = useAdaptiveResponsiveContext();
+
+  useData();
 
   const desktopLayout = (
     <div className="App">

@@ -1,5 +1,4 @@
-export { default as usePost } from "./usePost";
-export { default as useGet } from "./useGet";
-export { default as usePut } from "./usePut";
-export { default as useDelete } from "./useDelete";
-export { default as useSocket } from "./useSocket";
+export { default as usePost } from "./hooks/usePost";
+export { default as useGet } from "./hooks/useGet";
+export { default as usePut } from "./hooks/usePut";
+export { default as useDelete } from "./hooks/useDelete";
