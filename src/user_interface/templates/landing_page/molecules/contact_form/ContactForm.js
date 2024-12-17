@@ -5,6 +5,7 @@ import { useAdaptiveResponsiveContext } from "../../../../../business_logic/wrap
 import { useContact, useName } from "../../../../../business_logic/hooks/hooks";
 import useEmail from "../../../../../business_logic/hooks/useEmail";
 import usePhone from "../../../../../business_logic/hooks/usePhone";
+import { formatPhone } from "../../../../../business_logic/util/formatPhone";
 
 function ContactForm() {
   const { device } = useAdaptiveResponsiveContext();
@@ -23,7 +24,7 @@ function ContactForm() {
     const isLengthValid = noSpacesValue.length <= 9;
 
     if (isNumbersOnly && isLengthValid) {
-      setPhone(noSpacesValue.replace(/(.{3})(?=\S)/g, "$1 "));
+      setPhone(formatPhone(noSpacesValue));
     }
   };
 

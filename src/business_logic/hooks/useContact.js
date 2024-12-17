@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useGet } from "../../services/services";
 import { useGlobalContext } from "../../state_managment/GlobalProvider";
 import { useEffect } from "react";
+import { formatPhone } from "../util/formatPhone";
 
 function useContact() {
   const { token } = useParams();
@@ -17,6 +18,7 @@ function useContact() {
         return {
           ...prevState,
           ...response?.contact,
+          phone: formatPhone(response?.contact.phone),
         };
       });
     }

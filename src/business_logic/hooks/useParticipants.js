@@ -16,6 +16,13 @@ function useParticipants(minParticipants, maxParticipants) {
     participantsError,
   ] = useGet(`participant/participants/${token}`);
 
+  useEffect(() => {
+    console.log("participantsResponse", participantsResponse);
+  }, [participantsResponse]);
+
+  let childrenDebounceTimeout;
+  let adultsDebounceTimeout;
+
   const setChildrenCount = (childrenCount) => {
     setState((prevState) => {
       return {
@@ -24,7 +31,11 @@ function useParticipants(minParticipants, maxParticipants) {
       };
     });
 
-    socket.emit("children", { children: childrenCount, token: token });
+    clearTimeout(childrenDebounceTimeout);
+
+    childrenDebounceTimeout = setTimeout(() => {
+      socket.emit("children", { children: childrenCount, token: token });
+    }, 1000);
   };
 
   const setAdultsCount = (adultsCount) => {
@@ -34,7 +45,12 @@ function useParticipants(minParticipants, maxParticipants) {
         adultsCount: adultsCount,
       };
     });
-    socket.emit("adults", { adults: adultsCount, token: token });
+
+    clearTimeout(adultsDebounceTimeout);
+
+    adultsDebounceTimeout = setTimeout(() => {
+      socket.emit("adults", { adults: adultsCount, token: token });
+    }, 1000);
   };
 
   useEffect(() => {
