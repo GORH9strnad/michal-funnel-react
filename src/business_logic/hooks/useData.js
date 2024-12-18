@@ -26,7 +26,7 @@ function useData() {
 
   useEffect(() => {
     if (!isPerforming && status === 200) {
-      navigate(`/${response?.token}`);
+      navigate(`/${response?.token}`, { replace: true });
     }
   }, [isPerforming, status]);
 }

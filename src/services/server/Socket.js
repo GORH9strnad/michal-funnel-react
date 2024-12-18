@@ -1,5 +1,4 @@
 import { io } from "socket.io-client";
-import axios from "axios";
 import { url } from "./url";
 
 class Socket {

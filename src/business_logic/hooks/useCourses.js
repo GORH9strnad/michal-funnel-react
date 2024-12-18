@@ -46,7 +46,7 @@ function useCourses() {
   }, [isSelectedCoursePerforming, isCoursesPerforming]);
 
   useEffect(() => {
-    if (state.selectedCourse && !isSelectedCoursePerforming) {
+    if (state.selectedCourse && !isSelectedCoursePerforming && token) {
       executePut();
     }
   }, [state.selectedCourse, isSelectedCoursePerforming]);
@@ -81,9 +81,7 @@ function useCourses() {
   return [
     coursesResponse?.courses,
     state?.selectedCourse,
-    isSelectedCoursePerforming ||
-      isCoursesPerforming ||
-      isSelectCoursePerforming,
+    isSelectedCoursePerforming || isCoursesPerforming,
     setSelectedCourse,
   ];
 }
