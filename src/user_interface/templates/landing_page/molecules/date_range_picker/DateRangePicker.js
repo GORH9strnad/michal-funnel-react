@@ -20,7 +20,7 @@ function DateRangePicker() {
         <Fragment>
           <div className="date-range-picker-container">
             <div className="range-picker">
-              {dates.map((date, index) => (
+              {dates?.map((date, index) => (
                 <div
                   className={`range ${
                     selectedDate?.id === date.id ? "selected" : ""
@@ -71,7 +71,7 @@ function DateRangePicker() {
         <Fragment>
           <div className="mobile-date-range-picker-container">
             <div className="mobile-range-picker">
-              {dates.map((date, index) => (
+              {dates?.map((date, index) => (
                 <div
                   className={`mobile-range ${
                     selectedDate?.id === date.id ? "mobile-selected" : ""

@@ -9,7 +9,9 @@ class Socket {
       return Socket.instance;
     }
     Socket.instance = this;
-    this.socket = io(url);
+    this.socket = io(url, {
+      transports: ["polling", "websocket"],
+    });
   }
 
   async emit(event, data) {
