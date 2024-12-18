@@ -10,7 +10,8 @@ class Socket {
     }
     Socket.instance = this;
     this.socket = io(url, {
-      transports: ["polling", "websocket"],
+      transports: ["websocket"],
+      withCredentials: true,
     });
   }
 
