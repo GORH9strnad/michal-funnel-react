@@ -9,9 +9,8 @@ class Socket {
       return Socket.instance;
     }
     Socket.instance = this;
-    this.socket = io("wss://funnel-backend-cc55b5f5c548.herokuapp.com", {
+    this.socket = io(url, {
       transports: ["websocket"],
-      withCredentials: true,
     });
   }
 
