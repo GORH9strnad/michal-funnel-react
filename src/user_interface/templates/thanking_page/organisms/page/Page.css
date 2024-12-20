@@ -1,0 +1,10 @@
+.thanking-page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    rgba(143, 182, 182, 1),
+    rgb(255, 255, 255)
+  );
+}
