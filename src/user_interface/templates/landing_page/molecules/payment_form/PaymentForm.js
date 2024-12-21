@@ -8,12 +8,15 @@ import {
 import "./PaymentForm.css";
 import { loadStripe } from "@stripe/stripe-js";
 import { useAdaptiveResponsiveContext } from "../../../../../business_logic/wrappers/AdaptiveResponsive";
+import { useGlobalContext } from "../../../../../state_managment/GlobalProvider";
 
 const stripePromise = loadStripe("your-public-key-here");
 
 const CardForm = () => {
   const stripe = useStripe();
   const elements = useElements();
+
+  const { state } = useGlobalContext();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -52,7 +55,7 @@ const CardForm = () => {
         className="card-element"
       />
       <button type="submit" disabled={!stripe} className="payment-button">
-        Zaplatit 10 000 kč
+        Zaplatit {state.price} kč
       </button>
     </form>
   );

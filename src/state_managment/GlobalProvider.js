@@ -15,6 +15,7 @@ export const GlobalProvider = ({ children }) => {
     childrenCount: 0,
     adultsCount: 0,
     selectedCourse: null,
+    price: 0,
   });
 
   const [tokenExists, isTokenLoading] = useToken();

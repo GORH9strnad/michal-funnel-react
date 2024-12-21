@@ -3,12 +3,15 @@ import "./ParticipantsPicker.css";
 import Slider from "../../atoms/slider/Slider";
 import useParticipants from "../../../../../business_logic/hooks/useParticipants";
 import { useAdaptiveResponsiveContext } from "../../../../../business_logic/wrappers/AdaptiveResponsive";
+import { useGlobalContext } from "../../../../../state_managment/GlobalProvider";
 
 const maxParticipants = 11;
 const minParticipants = 1;
 
 function ParticipantsPicker() {
   const { device } = useAdaptiveResponsiveContext();
+
+  const { state } = useGlobalContext();
 
   const [
     childrenCount,
@@ -42,7 +45,7 @@ function ParticipantsPicker() {
         textAfter="x Dospělých"
         topLimit={adultsCountLimit}
       />
-      <h2>Cena KČ celkem: 0</h2>
+      <h2>Cena KČ celkem: {state.price}</h2>
     </div>
   );
 }

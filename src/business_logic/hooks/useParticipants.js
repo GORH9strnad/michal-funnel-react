@@ -3,6 +3,7 @@ import { useGlobalContext } from "../../state_managment/GlobalProvider";
 import { useGet } from "../../services/services";
 import { socket } from "../../services/server/Socket";
 import { useParams } from "react-router-dom";
+import formatPrice from "../util/formatPrice";
 
 function useParticipants(minParticipants, maxParticipants) {
   const { token } = useParams();
@@ -35,7 +36,7 @@ function useParticipants(minParticipants, maxParticipants) {
 
     childrenDebounceTimeout = setTimeout(() => {
       socket.emit("children", { children: childrenCount, token: token });
-    }, 1000);
+    }, 2000);
   };
 
   const setAdultsCount = (adultsCount) => {
@@ -50,8 +51,33 @@ function useParticipants(minParticipants, maxParticipants) {
 
     adultsDebounceTimeout = setTimeout(() => {
       socket.emit("adults", { adults: adultsCount, token: token });
-    }, 1000);
+    }, 2000);
   };
+
+  useEffect(() => {
+    socket.emit("price", {
+      children: state.childrenCount,
+      adults: state.adultsCount,
+    });
+  }, [state.childrenCount, state.adultsCount]);
+
+  useEffect(() => {
+    const handlePrice = (data) => {
+      setState((prevState) => {
+        return {
+          ...prevState,
+          price: formatPrice(data.price),
+        };
+      });
+      console.log("price", data.price);
+    };
+
+    socket.on("price", handlePrice);
+
+    return () => {
+      socket.off("price", handlePrice);
+    };
+  }, []);
 
   useEffect(() => {
     if (!isParticipantsLoading && participantsStatus === 200) {
