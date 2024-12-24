@@ -1,1 +1,1 @@
-export const url = "https://funnel-backend-cc55b5f5c548.herokuapp.com/";
+export const url = "http://0.0.0.0:8000/";
