@@ -1,5 +1,5 @@
 import { memo } from "react";
-import "./App.css";
+
 import LandingPage from "./user_interface/templates/landing_page/LandingPage";
 import { Route, Routes } from "react-router-dom";
 import ThankingPage from "./user_interface/templates/thanking_page/ThankingPage";
