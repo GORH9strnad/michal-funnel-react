@@ -36,7 +36,7 @@ function useParticipants(minParticipants, maxParticipants) {
 
     childrenDebounceTimeout = setTimeout(() => {
       socket.emit("children", { children: childrenCount, token: token });
-    }, 2000);
+    }, 1000);
   };
 
   const setAdultsCount = (adultsCount) => {
@@ -51,7 +51,7 @@ function useParticipants(minParticipants, maxParticipants) {
 
     adultsDebounceTimeout = setTimeout(() => {
       socket.emit("adults", { adults: adultsCount, token: token });
-    }, 2000);
+    }, 1000);
   };
 
   useEffect(() => {

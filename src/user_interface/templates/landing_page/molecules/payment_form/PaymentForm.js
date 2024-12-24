@@ -10,7 +10,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useAdaptiveResponsiveContext } from "../../../../../business_logic/wrappers/AdaptiveResponsive";
 import { useGlobalContext } from "../../../../../state_managment/GlobalProvider";
 
-const stripePromise = loadStripe("your-public-key-here");
+const stripePromise = loadStripe(
+  "pk_test_51QR4suGVQpu6q1EsuNFKnDqJq3XPyYVmw27eoxMlYRzDMLBBKBlMnEZGdXu5o4ywZaWJuBDTKIrNcjrHaUMvn6Uq00KMwq2a5R"
+);
 
 const CardForm = () => {
   const stripe = useStripe();
@@ -22,7 +24,6 @@ const CardForm = () => {
     event.preventDefault();
 
     if (!stripe || !elements) {
-      // Stripe.js has not yet loaded.
       return;
     }
 
